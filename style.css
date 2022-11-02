@@ -38,6 +38,7 @@ body{
     color: white;
     outline: 1px black solid;
     font-size: 40px;
+    cursor: pointer;
 }
 
 button{
