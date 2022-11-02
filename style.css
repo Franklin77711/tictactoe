@@ -1,0 +1,46 @@
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    padding: 0;
+    margin: 0;
+}
+#content{
+    border: 3px solid lightgrey;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 1000px;
+    height: 50%;
+}
+
+#playarea{
+    background-color: darkgoldenrod;
+    display: grid;
+    grid-template-columns: 80px 80px 80px;
+    grid-template-rows: 80px 80px 80px;
+    width: 100%;
+    padding-top: 1em;
+    margin-bottom: 0;
+    justify-content: center;
+    height: 70%;
+}
+
+.square{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    color: white;
+    outline: 1px black solid;
+    font-size: 40px;
+}
+
+button{
+    width: 150px;
+    margin-top: 1rem;
+}
