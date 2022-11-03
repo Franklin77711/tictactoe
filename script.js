@@ -14,6 +14,10 @@ const winCondition = [
     [0,4,8],
     [2,4,6]
 ]
+
+const human = "X";
+const AI = "O";
+
 /*let board;
 
 startGame();
@@ -25,24 +29,21 @@ function startGame(){
     }
 }*/
 
-//user input X
+//user input X with winner Check
 for (const square of squares) {
     square.addEventListener("click", function addX(){
         if(square.textContent == ""){
         square.textContent = "X";
-            if (checkWin()== true){
+            if (checkWinPlayer() == true){
                 popUp.style.visibility = "visible";
                 overlay.classList.add("active")
         }
     }
 })
-
-}
-function addO(){
-    
 }
 
-//clear
+
+//clear and restart
 function clear(){
     for (let i = 0; i < squares.length; i++) {
         squares[i].textContent="";
@@ -52,11 +53,39 @@ function clear(){
 }
 restartBtn.addEventListener("click", clear);
 anotherRound.addEventListener("click", clear);
+
+
 //check win
-function checkWin() {
+function checkWinPlayer() {
     return winCondition.some(combination => {
-      return combination.every(index => {
-        return (squares[index].textContent=="X" || squares[index].textContent=="O")
-      }
-    )})
+        return combination.every(index => {
+            return (squares[index].textContent=="X")
+            }
+        )})
     }
+function checkWinAI() {
+    return winCondition.some(combination => {
+        return combination.every(index => {
+            return (squares[index].textContent=="O")
+            }
+        )})
+    }
+
+//AI
+
+/*function emptyIndex(emptyIndex){
+    for (let i = 0; i < squares.length; i++) {
+        let emptyIndex = squares[i].textContent="";
+    } 
+}
+
+function addO(){
+    for(const square of squares){
+        if(square != "X" || square !="O")
+        square.textContent="O"
+            if(checkWinAI()==true){
+                popUp.style.visibility = "visible";
+                overlay.classList.add("active")
+            }
+    }
+ }*/
